@@ -10,6 +10,7 @@
 - belongs_to :group
 - belongs_to :user
 
+
 ## usersテーブル
 |Column|Type|Option|
 |------|----|------|
@@ -18,8 +19,8 @@
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :message
-- belongs_to :group
+- has_many :members
+- has_many :group, through: :member
 
 
 ## groupsテーブル
@@ -27,7 +28,8 @@
 |------|----|------|
 |name|string|null: false|
 ### Association
-- belongs_to :user
+- has_many :members
+- has_many :users, through: :member
 
 
 ## membersテーブル
@@ -36,5 +38,5 @@
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :group
 - belongs_to :user
+- belongs_to :group
