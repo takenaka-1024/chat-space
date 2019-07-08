@@ -9,7 +9,7 @@ $(function(){
                 </p>`
     return html;
   }
-  ('#new_message').on('submit',function(e){
+  $('#new_message').on('submit',function(e){
     e.preventDefault();
     var formData = new FormData(this);
     var href = window.location.href + '/messages'
@@ -26,8 +26,17 @@ $(function(){
       $('.messages').append(html)
       $('.textbox').val('')
     })
-    .fail(function(){
-      alert('error');
-    })
+    $('#new_message').on('submit',function(e){
+      var formData = new FormData(this);
+      var href = window.location.href + '/messages'
+    $("html,body").animate({scrollTop:$('#new_message').offset().top});
+
+    // $('body').delay(100).animate({
+    //   scrollTop: $(document).height()
+    // },1500);
+
+    // .fail(function(){
+    //   alert('error');
+    // })
   })
-})
+});
