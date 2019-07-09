@@ -5,4 +5,3 @@ class Message < ApplicationRecord
   validates :talk, presence: true, unless: :image?
   mount_uploader :image, ImageUploader
 end
-
