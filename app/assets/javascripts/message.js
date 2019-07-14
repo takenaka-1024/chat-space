@@ -47,7 +47,7 @@ $(document).on('turbolinks:load', function(){
 
     var reloadMessages = setInterval(function() {
       if (window.location.href.match(/\/groups\/\d+\/messages/)){
-        var last_message_id = $('.message').last().data('id') || 0
+        var last_message_id = $('.message:last').data('id');
         $.ajax({
           url: 'api/messages',
           type: 'get',
@@ -65,5 +65,5 @@ $(document).on('turbolinks:load', function(){
             alert('自動更新失敗');
         });
       }
-    },2000);
+    },5000);
 });
