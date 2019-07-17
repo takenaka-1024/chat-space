@@ -33,6 +33,9 @@
       &__button {
         color: $light_blue;
         text-decoration: none;
+        a {
+          color: $light_blue;
+        }
       }
     }
   }

@@ -36,6 +36,7 @@
       &__name {
         color: $white;
         font-size: $side_group_name;
+        text-decoration: none;
       }
       &__message {
         color: $white;
@@ -45,4 +46,8 @@
       }
     }
   }
+}
+
+a {
+  text-decoration: none;
 }
